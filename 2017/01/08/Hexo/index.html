@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://zhailiange.com/2017/01/08/Hexo/index.html">
 <meta property="og:site_name" content="Hailiang's Bolg">
 <meta property="og:description" content="搭建参考 Hexo! 主要是查看documentation ，另外，可以出现问题后可以留意 troubleshooting 或者在 GitHub上提问。">
-<meta property="og:updated_time" content="2017-03-06T05:20:17.000Z">
+<meta property="og:updated_time" content="2017-03-06T05:30:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 博客搭建注意事项">
 <meta name="twitter:description" content="搭建参考 Hexo! 主要是查看documentation ，另外，可以出现问题后可以留意 troubleshooting 或者在 GitHub上提问。">
@@ -356,16 +356,10 @@
 <li><a href="https://git-scm.com/" target="_blank" rel="external">Git</a></li>
 </ul>
 <p>在这里主要说下 git 配置。</p>
-<h2 id="git-配置"><a href="#git-配置" class="headerlink" title="git 配置"></a>git 配置</h2><ul>
-<li>1.添加用户名和邮箱</li>
-</ul>
-<p>git config –global user.name “Hailiange”</p>
-<p>git config –global user.email “yuerxia@yeah.net”</p>
-<ul>
-<li>2.key连接</li>
-</ul>
-<p>继续输入：</p>
-<p>添加添加 SSH key ，以便获取 key 与 GitHub  链接：<code>ssh-keygen -t rsa -C &quot;yuerxia@yeah.net&quot;</code></p>
+<h2 id="git-配置"><a href="#git-配置" class="headerlink" title="git 配置"></a>git 配置</h2><h3 id="1-添加用户名和邮箱"><a href="#1-添加用户名和邮箱" class="headerlink" title="1.添加用户名和邮箱"></a>1.添加用户名和邮箱</h3><p>git config –global user.name “Hailiange”</p>
+<p>git config –global user.email “user@email.com”</p>
+<h3 id="2-key连接"><a href="#2-key连接" class="headerlink" title="2.key连接"></a>2.key连接</h3><p>继续输入：</p>
+<p>添加添加 SSH key ，以便获取 key 与 GitHub  链接：<code>ssh-keygen -t rsa -C &quot;user@email.com&quot;</code></p>
 <p>连续回车3次，中间有让输入密码，继续回车，生成 key。</p>
 <p>然后查看 public key 在终端输入：<code>cat ~/.ssh/id_rsa.pub</code>，复制一连串的 key 字母。</p>
 <p>最后登录GitHub 在「Settings-SSH and GPG keys 」 上面点击「New SSH key」, 粘贴在终端上得到的 key。确认。</p>
@@ -373,38 +367,17 @@
 <p>注意：注意空格和字母</p>
 <p><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>具体建站过程官方文档已经说明，不再次赘述。下面主要是记录搭建过程中出现的错误。</p>
 <h2 id="建站时出现的错误"><a href="#建站时出现的错误" class="headerlink" title="建站时出现的错误"></a>建站时出现的错误</h2><p>根据<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">官方文档</a> 建站配置，然后在命令部分出现问题：</p>
-<ul>
-<li>1.重复建站</li>
-</ul>
-<p>在建站时，出现重复，体现在电脑中 Hexo 的那些文件重复。</p>
-<ul>
-<li>2.新建文件前，没有定位</li>
-</ul>
-<p>在新建网站之后</p>
+<h3 id="1-重复建站"><a href="#1-重复建站" class="headerlink" title="1.重复建站"></a>1.重复建站</h3><p>在建站时，出现重复，体现在电脑中 Hexo 的那些文件重复。</p>
+<h3 id="2-新建文件前，没有定位"><a href="#2-新建文件前，没有定位" class="headerlink" title="2.新建文件前，没有定位"></a>2.新建文件前，没有定位</h3><p>在新建网站之后</p>
 <p><code>$ hexo init zhailiange</code></p>
 <p>要新建文件，结果没有在这之前输入 <code>cd zhailiange</code> 定位文件名,导致一直出现 <code>Usage: hexo &lt;command&gt;</code></p>
-<ul>
-<li>3.搭建过程成，混淆了「建站」和「命令」两部分。</li>
-</ul>
-<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><ul>
-<li>1.新建文件：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<h3 id="3-搭建过程成，混淆了「建站」和「命令」两部分。"><a href="#3-搭建过程成，混淆了「建站」和「命令」两部分。" class="headerlink" title="3.搭建过程成，混淆了「建站」和「命令」两部分。"></a>3.搭建过程成，混淆了「建站」和「命令」两部分。</h3><h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><h3 id="1-新建文件："><a href="#1-新建文件：" class="headerlink" title="1.新建文件："></a>1.新建文件：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<ul>
-<li>2.运行</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<h3 id="2-运行"><a href="#2-运行" class="headerlink" title="2.运行"></a>2.运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<ul>
-<li>3.生成静态文件</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<h3 id="3-生成静态文件"><a href="#3-生成静态文件" class="headerlink" title="3.生成静态文件"></a>3.生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<ul>
-<li>4.部署到远程站点</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<h3 id="4-部署到远程站点"><a href="#4-部署到远程站点" class="headerlink" title="4.部署到远程站点"></a>4.部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
@@ -575,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-配置"><span class="nav-number">1.</span> <span class="nav-text">git 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建站时出现的错误"><span class="nav-number">2.</span> <span class="nav-text">建站时出现的错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见命令"><span class="nav-number">3.</span> <span class="nav-text">常见命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-配置"><span class="nav-number">1.</span> <span class="nav-text">git 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-添加用户名和邮箱"><span class="nav-number">1.1.</span> <span class="nav-text">1.添加用户名和邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-key连接"><span class="nav-number">1.2.</span> <span class="nav-text">2.key连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建站时出现的错误"><span class="nav-number">2.</span> <span class="nav-text">建站时出现的错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-重复建站"><span class="nav-number">2.1.</span> <span class="nav-text">1.重复建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-新建文件前，没有定位"><span class="nav-number">2.2.</span> <span class="nav-text">2.新建文件前，没有定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-搭建过程成，混淆了「建站」和「命令」两部分。"><span class="nav-number">2.3.</span> <span class="nav-text">3.搭建过程成，混淆了「建站」和「命令」两部分。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见命令"><span class="nav-number">3.</span> <span class="nav-text">常见命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-新建文件："><span class="nav-number">3.1.</span> <span class="nav-text">1.新建文件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-运行"><span class="nav-number">3.2.</span> <span class="nav-text">2.运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-生成静态文件"><span class="nav-number">3.3.</span> <span class="nav-text">3.生成静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-部署到远程站点"><span class="nav-number">3.4.</span> <span class="nav-text">4.部署到远程站点</span></a></li></ol></li></ol></div>
             
 
           </div>
