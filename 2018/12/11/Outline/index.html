@@ -94,20 +94,21 @@
 「Outline」是 Google Jigsaw 开发的一款开放原始码工具，目的是为新闻机构或新闻工作者建立一个更安全、加密的连线管道，当然不仅限于此目的，任何人都可以从官网下载、免费使用，你唯一需要做的就是取得准备好 VPS 或其他云端空间（例如 DigitalOcean）。">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy34l91y6bj31pw0qg44p.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy34laaoaxj31hg0u0jww.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy32s1xidjj30zm0n2dri.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy35p7l5llj31ii0pe7l1.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy32t0contj30u00n0gq3.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy326vxvncj30sm0hcdgw.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy326ws8yaj30sa0asabd.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy32tjrez4j30zg0pkq8l.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy332re2rej30x10u0aes.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy334t1655j30z80u0jx6.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy334t1655j30z80u0jx6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy35e3p3rtj30xs0u0aeg.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy33g8d4xoj30v20re425.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy33g4o8t9j30hs0lz760.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy33ik09coj30tu0xgq7c.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy33t3zdhzj30lm0vw494.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy347hy3myj30q60ymh7k.jpg">
-<meta property="og:updated_time" content="2018-12-11T13:44:09.276Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy35lt4aoqj313w0is0tx.jpg">
+<meta property="og:updated_time" content="2018-12-11T14:21:31.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Outline Manager 和 Outline 部署">
 <meta name="twitter:description" content="今天介绍一款科学上网的工具 Outline ，60天免费，后续可以根据情况是否续费。手机电脑都可以用，还可以用于团队。
@@ -402,30 +403,29 @@
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fy34l91y6bj31pw0qg44p.jpg" alt="Outline Manager"></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy34laaoaxj31hg0u0jww.jpg" alt="Outline"></p>
 <p>接下来我会使用 Mac 版本搭配 DigitalOcean 示范如何使用，DigitalOcean 每月最低价格 $5 美金，通过我的<a href="https://m.do.co/c/17f1e04722a9" target="_blank" rel="external">推荐链接</a>注册可以先获得 $100 美金，足够使用两个月不用付费。也支援 Linode、Vultr、Google Compute Engine、Amazon EC2 等服务。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">网站名称：Outline – Making it safer to break the news</div><div class="line"></div><div class="line">网站链结：https://getoutline.org/en/home</div></pre></td></tr></table></figure>
-<h2 id="在-DigitalOcean-免费注册，取得-100-美元试用额度"><a href="#在-DigitalOcean-免费注册，取得-100-美元试用额度" class="headerlink" title="在 DigitalOcean 免费注册，取得 $100 美元试用额度"></a>在 DigitalOcean 免费注册，取得 $100 美元试用额度</h2><h3 id="STEP-1"><a href="#STEP-1" class="headerlink" title="STEP 1"></a>STEP 1</h3><p>如果你还没有 DigitalOcean 帐户，可以通过我的<a href="https://m.do.co/c/17f1e04722a9" target="_blank" rel="external">推荐链结</a> 获取 $100 美元额度，点击链接后进入官方网站，点选最顶端的链结开始注册（如下图红色箭头标示处）。</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy32s1xidjj30zm0n2dri.jpg" alt="登录页面"></p>
-<p>因为是通过邀请链接加入 DigitalOcean 能得到 $100 美元额度，填入 Email 和密码注册一个帐号，这个余额有效期限为60天，只要在时限内用掉就不会过期失效。</p>
-<h3 id="STEP-2"><a href="#STEP-2" class="headerlink" title="STEP 2"></a>STEP 2</h3><p>接着需要验证 Email 并加入一张信用卡或者绑定 PayPal 来验证身份，而且也要这一步验证才能获取 $100 美元余额，这是避免被大量注册或滥用。在余额没用完以前不会从信用卡被扣款。我用的是 PayPal，验证的时候需要扣钱，当时付了 $ 5 美元。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">网站名称：Outline – Making it safer to break the news</div><div class="line">网站链结：[https://getoutline.org/en/home](https://getoutline.org/en/home)</div></pre></td></tr></table></figure>
+<h2 id="在-DigitalOcean-免费注册，取得-100-美元试用额度"><a href="#在-DigitalOcean-免费注册，取得-100-美元试用额度" class="headerlink" title="在 DigitalOcean 免费注册，取得 $100 美元试用额度"></a>在 DigitalOcean 免费注册，取得 $100 美元试用额度</h2><h3 id="STEP-1"><a href="#STEP-1" class="headerlink" title="STEP 1"></a>STEP 1</h3><p>首先需要注册 DigitalOcean 帐户，你可以通过我的<a href="https://m.do.co/c/17f1e04722a9" target="_blank" rel="external">推荐链接</a> 获取 $100 美元额度。这样60天使用是免费的。60天后你想继续使用，可以按每月5美元使用。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy35p7l5llj31ii0pe7l1.jpg" alt="登录页面"></p>
+<h3 id="STEP-2"><a href="#STEP-2" class="headerlink" title="STEP 2"></a>STEP 2</h3><p>接着需要验证 Email 并加入一张信用卡或者绑定 PayPal 来验证身份，而且也要这一步验证才能获取 $100 美元余额，这是避免被大量注册或滥用。在余额没用完以前不会从信用卡被扣款。我用的是 PayPal，验证的时候需要支付$ 5 美元验证是你的账户。</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy32t0contj30u00n0gq3.jpg" alt="验证页面"></p>
 <p>验证后到帐户设定页面确实会有 $100 美元余额，如果照 DigitalOcean 最便宜方案每月价格五美元来说，余额足够使用两个月。稍后会来邮件，账户也会多出你验证时付的 $5美元。</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy326vxvncj30sm0hcdgw.jpg" alt="账户显示3"></p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy326ws8yaj30sa0asabd.jpg" alt="账户显示2"></p>
 <p>截图是我的账户显示，原来是 $ 105 美元，赠送的 $100美元+ 验证的 $5美元，现在已经过了7天，账户显示里面赠送的 $ 100美元 只剩 $ 98.81 美元了。</p>
-<h2 id="以-Outline-Manager-建立自己的-VPN-服务器"><a href="#以-Outline-Manager-建立自己的-VPN-服务器" class="headerlink" title="以 Outline Manager 建立自己的 VPN 服务器"></a>以 Outline Manager 建立自己的 VPN 服务器</h2><h3 id="STEP-1-1"><a href="#STEP-1-1" class="headerlink" title="STEP 1"></a>STEP 1</h3><p>取得 DigitalOcean 或其他 VPS 服务的帐号后，我们就可以从 Outline 官方网站下载管理工具 Outline Manager，目前支援 Windows、Linux 和 macOS 三个版本。</p>
+<h2 id="用-Outline-Manager-建立自己的-VPN-服务器"><a href="#用-Outline-Manager-建立自己的-VPN-服务器" class="headerlink" title="用 Outline Manager 建立自己的 VPN 服务器"></a>用 Outline Manager 建立自己的 VPN 服务器</h2><h3 id="STEP-1-1"><a href="#STEP-1-1" class="headerlink" title="STEP 1"></a>STEP 1</h3><p>取得 DigitalOcean 或其他 VPS 服务的帐号后，我们就可以从 Outline 官方网站下载管理工具 Outline Manager，目前支援 Windows、Linux 和 macOS 三个版本。</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fy32tjrez4j30zg0pkq8l.jpg" alt="Outline 官方页面"></p>
 <p>登录 Outline Manager 后，点选下方的「Sign me in」登入 DigitalOcean 帐户。</p>
-<h3 id="STEP-2-1"><a href="#STEP-2-1" class="headerlink" title="STEP 2"></a>STEP 2</h3><p>登入 DigitalOcean 會跳出 Outline 要求讀取和寫入權限的提示訊息，點選「Authorize Application」按鈕允許讓應用程式使用你的帳戶權限。</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy332re2rej30x10u0aes.jpg" alt="登录页面"></p>
+<h3 id="STEP-2-1"><a href="#STEP-2-1" class="headerlink" title="STEP 2"></a>STEP 2</h3><p>登陆 DigitalOcean 会跳出 Outline 要求读取和写入权限的提示信息，点选「Authorize Application」按钮允许应用使用你的帳戶权限。</p>
 <h3 id="STEP-3"><a href="#STEP-3" class="headerlink" title="STEP 3"></a>STEP 3</h3><p>接着就能选择要建立 VPN 服务器的国家，随意哪个都可以。</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy334t1655j30z80u0jx6.jpg" alt="选择网络页面"></p>
 <p>选好要建立 VPN 服务器节点后，点选「Set Up Outline」就会开始设定，大约需要一两分钟链接。</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy334t1655j30z80u0jx6.jpg" alt="链接状态"></p>
-<p>注意，如果选择国家节点时遇到如下的错误提示，即使关闭防火牆、重新链接数次都不行，那么可以先删除服务器，然后选择其他节点试试。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy35e3p3rtj30xs0u0aeg.jpg" alt="链接状态"></p>
+<p>注意，如果选择国家节点时遇到如下的错误提示，即使关闭防火墙、重新链接数次都不行，那么可以先删除服务器，然后选择其他节点试试。</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy33g8d4xoj30v20re425.jpg" alt="出错页面"></p>
-<h3 id="STEP-4"><a href="#STEP-4" class="headerlink" title="STEP 4"></a>STEP 4</h3><p>最后按下「Connect This Device」就能连线到 VPN（如果电脑上还没有 Outline 会跳转到下载页面），跟其他服务不同的是 Outline 会产生一段用以连线的网址，不用辛苦记住帐号密码，只要把那串网址複製贴上就能设定好 VPN 服务器。</p>
+<h3 id="STEP-4"><a href="#STEP-4" class="headerlink" title="STEP 4"></a>STEP 4</h3><p>最后按下「Connect This Device」就能连线到 VPN（如果电脑上还没有 Outline 会跳转到下载页面），跟其他服务不同的是 Outline 会产生一段用以连线的网址，不用辛苦记住帐号密码，只要把那串网址复制贴上就能设定好 VPN 服务器。</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy33g4o8t9j30hs0lz760.jpg" alt="地址"></p>
-<h3 id="STEP-5"><a href="#STEP-5" class="headerlink" title="STEP 5"></a>STEP 5</h3><p>建立完 VPN 服务器后会产生一组预设 Access Key，用以验证并登入，想跟其他朋友一起使用同一台 VPN 可以按下「Add Key」产生其他的验证金钥，分享存取同一台服务器权限，不过其他人也必须安装 Outline 才能连结。</p>
+<h3 id="STEP-5"><a href="#STEP-5" class="headerlink" title="STEP 5"></a>STEP 5</h3><p>建立完 VPN 服务器后会产生一组预设 Access Key，用以验证并登入，想跟其他朋友一起使用同一台 VPN 可以按下「Add Key」产生其他的验证密钥，分享存取同一台服务器权限，不过其他人也必须安装 Outline 才能连结。</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy33ik09coj30tu0xgq7c.jpg" alt="连接状态"></p>
 <h2 id="下载Outline-连接-VPN-，手机电脑都可以用了"><a href="#下载Outline-连接-VPN-，手机电脑都可以用了" class="headerlink" title="下载Outline 连接 VPN ，手机电脑都可以用了"></a>下载Outline 连接 VPN ，手机电脑都可以用了</h2><h3 id="STEP-1-2"><a href="#STEP-1-2" class="headerlink" title="STEP 1"></a>STEP 1</h3><p>前面有提到，Outline 是由两部分构成，也可以说是管理端和用户端，从官方网站下载用户端的 Outline 应用程式或手机 App，然后将 Outline Manager 产生的网址复制黏贴上，就能将服务器加入列表使用。</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fy33t3zdhzj30lm0vw494.jpg" alt="复制链接"></p>
@@ -433,9 +433,11 @@
 <h3 id="STEP-2-2"><a href="#STEP-2-2" class="headerlink" title="STEP 2"></a>STEP 2</h3><p>加入后点选右下角的「连接」就能验证、连接到刚才建立的 VPN 服务器，而通过 Outline 建立 VPN 的 IP 位址会显示于伺服器名称下方。<br>如果你是 macOS 且是第一次使用，会跳出 Outline 想新增 VPN 设定的提示信息，点选左边的「Allow」允许设定，Windows 也会跳出类似提示讯息。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy347hy3myj30q60ymh7k.jpg" alt="连接页面"></p>
 <p>然后你可以打开谷歌浏览器随意输入文字，看看能不能科学上网了。</p>
-<h3 id="STEP-3-1"><a href="#STEP-3-1" class="headerlink" title="STEP 3"></a>STEP 3</h3><p>要特别注意的是，如果以后不想再继续使用 Outline，记得通过 Outline Manager 将 VPN 服务器删除，否则是会继续计费的！当然你也可以直接从云端主机服务商把建立的虚拟主机移除，避免日后被收取费用，这步骤很重要，别忘了你在验证帐户时都有绑定信用卡账户，若超过使用额度就会从信用卡收费。</p>
-<p>Outline VPN 用意不是让你隐藏或伪装身分，而是绕过一些网路限制，或是加密传输重要资料，提高自身隐私和安全性，Google Jigsaw 让使用者更快、更简单部属自己的 VPN 服务，更重要的是随时能够移除或重新建立，避免被追踪或封锁连线，无论是管理或连线工具都支援相当多的平台，如果想要自己架设 VPN 的话或许是个不错的选择。</p>
-<h2 id="Outline-Manager-amp-Outline-比较好的地方"><a href="#Outline-Manager-amp-Outline-比较好的地方" class="headerlink" title="Outline Manager &amp; Outline 比较好的地方"></a>Outline Manager &amp; Outline 比较好的地方</h2><ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>要特别注意的是，如果以后不想再继续使用 Outline，记得通过 Outline Manager 将 VPN 服务器删除，否则是会继续计费的！当然你也可以直接从云端主机服务商把建立的虚拟主机移除，避免日后被收取费用，这步骤很重要，别忘了你在验证帐户时都有绑定信用卡账户，若超过使用额度就会从信用卡收费。</p>
+<p>如果想继续用，每月大概是 $5 美元</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy35lt4aoqj313w0is0tx.jpg" alt="每月费用"></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Outline VPN 比较好的地方：</p>
+<ul>
 <li><p>Google Jigsaw 开发、开放原始码免费 VPN 自动化架设工具</p>
 </li>
 <li><p>支援 Windows、macOS 和 Linux，连线工具亦支援 iOS 及 Android</p>
@@ -443,6 +445,9 @@
 <li><p>透过 VPS 服务例如 DigitalOcean、Linode 快速建立自己的 VPN</p>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">下载汇总：</div><div class="line"></div><div class="line">- 注册并验证 [DigitalOcean](https://m.do.co/c/17f1e04722a9)</div><div class="line"></div><div class="line">- 登录 [Outline](https://getoutline.org/en/home) 下载Outline Manager &amp; Outline</div></pre></td></tr></table></figure>
+<p>#Changelog</p>
+<p>181211 创建</p>
 
       
     </div>
@@ -656,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-DigitalOcean-免费注册，取得-100-美元试用额度"><span class="nav-number">1.</span> <span class="nav-text">在 DigitalOcean 免费注册，取得 $100 美元试用额度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-1"><span class="nav-number">1.1.</span> <span class="nav-text">STEP 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-2"><span class="nav-number">1.2.</span> <span class="nav-text">STEP 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以-Outline-Manager-建立自己的-VPN-服务器"><span class="nav-number">2.</span> <span class="nav-text">以 Outline Manager 建立自己的 VPN 服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-1-1"><span class="nav-number">2.1.</span> <span class="nav-text">STEP 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-2-1"><span class="nav-number">2.2.</span> <span class="nav-text">STEP 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-3"><span class="nav-number">2.3.</span> <span class="nav-text">STEP 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-4"><span class="nav-number">2.4.</span> <span class="nav-text">STEP 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-5"><span class="nav-number">2.5.</span> <span class="nav-text">STEP 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载Outline-连接-VPN-，手机电脑都可以用了"><span class="nav-number">3.</span> <span class="nav-text">下载Outline 连接 VPN ，手机电脑都可以用了</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-1-2"><span class="nav-number">3.1.</span> <span class="nav-text">STEP 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-2-2"><span class="nav-number">3.2.</span> <span class="nav-text">STEP 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-3-1"><span class="nav-number">3.3.</span> <span class="nav-text">STEP 3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Outline-Manager-amp-Outline-比较好的地方"><span class="nav-number">4.</span> <span class="nav-text">Outline Manager & Outline 比较好的地方</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-DigitalOcean-免费注册，取得-100-美元试用额度"><span class="nav-number">1.</span> <span class="nav-text">在 DigitalOcean 免费注册，取得 $100 美元试用额度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-1"><span class="nav-number">1.1.</span> <span class="nav-text">STEP 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-2"><span class="nav-number">1.2.</span> <span class="nav-text">STEP 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-Outline-Manager-建立自己的-VPN-服务器"><span class="nav-number">2.</span> <span class="nav-text">用 Outline Manager 建立自己的 VPN 服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-1-1"><span class="nav-number">2.1.</span> <span class="nav-text">STEP 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-2-1"><span class="nav-number">2.2.</span> <span class="nav-text">STEP 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-3"><span class="nav-number">2.3.</span> <span class="nav-text">STEP 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-4"><span class="nav-number">2.4.</span> <span class="nav-text">STEP 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-5"><span class="nav-number">2.5.</span> <span class="nav-text">STEP 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载Outline-连接-VPN-，手机电脑都可以用了"><span class="nav-number">3.</span> <span class="nav-text">下载Outline 连接 VPN ，手机电脑都可以用了</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-1-2"><span class="nav-number">3.1.</span> <span class="nav-text">STEP 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-2-2"><span class="nav-number">3.2.</span> <span class="nav-text">STEP 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">3.3.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
