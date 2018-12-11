@@ -1,0 +1,832 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="科学上网,Outline," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="今天介绍一款科学上网的工具 Outline ，60天免费，后续可以根据情况是否续费。手机电脑都可以用，还可以用于团队。
+「Outline」是 Google Jigsaw 开发的一款开放原始码工具，目的是为新闻机构或新闻工作者建立一个更安全、加密的连线管道，当然不仅限于此目的，任何人都可以从官网下载、免费使用，你唯一需要做的就是取得准备好 VPS 或其他云端空间（例如 DigitalOcean）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Outline Manager 和 Outline 部署">
+<meta property="og:url" content="http://zhailiange.com/2018/12/11/Outline/index.html">
+<meta property="og:site_name" content="Hailiang's Blog">
+<meta property="og:description" content="今天介绍一款科学上网的工具 Outline ，60天免费，后续可以根据情况是否续费。手机电脑都可以用，还可以用于团队。
+「Outline」是 Google Jigsaw 开发的一款开放原始码工具，目的是为新闻机构或新闻工作者建立一个更安全、加密的连线管道，当然不仅限于此目的，任何人都可以从官网下载、免费使用，你唯一需要做的就是取得准备好 VPS 或其他云端空间（例如 DigitalOcean）。">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy34l91y6bj31pw0qg44p.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy34laaoaxj31hg0u0jww.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy32s1xidjj30zm0n2dri.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy32t0contj30u00n0gq3.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy326vxvncj30sm0hcdgw.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy326ws8yaj30sa0asabd.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy32tjrez4j30zg0pkq8l.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy332re2rej30x10u0aes.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy334t1655j30z80u0jx6.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy334t1655j30z80u0jx6.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy33g8d4xoj30v20re425.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy33g4o8t9j30hs0lz760.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fy33ik09coj30tu0xgq7c.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy33t3zdhzj30lm0vw494.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy347hy3myj30q60ymh7k.jpg">
+<meta property="og:updated_time" content="2018-12-11T13:44:09.276Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Outline Manager 和 Outline 部署">
+<meta name="twitter:description" content="今天介绍一款科学上网的工具 Outline ，60天免费，后续可以根据情况是否续费。手机电脑都可以用，还可以用于团队。
+「Outline」是 Google Jigsaw 开发的一款开放原始码工具，目的是为新闻机构或新闻工作者建立一个更安全、加密的连线管道，当然不仅限于此目的，任何人都可以从官网下载、免费使用，你唯一需要做的就是取得准备好 VPS 或其他云端空间（例如 DigitalOcean）。">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy34l91y6bj31pw0qg44p.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhailiange.com/2018/12/11/Outline/"/>
+
+
+
+
+
+  <title> Outline Manager 和 Outline 部署 | Hailiang's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-96572635-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hailiang's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://zhailiange.com/2018/12/11/Outline/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="zhailiang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/我的头像.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hailiang's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hailiang's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Outline Manager 和 Outline 部署
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-11T21:39:52+08:00">
+                2018-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ToolBox/" itemprop="url" rel="index">
+                    <span itemprop="name">ToolBox</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/11/Outline/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/11/Outline/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天介绍一款科学上网的工具 Outline ，60天免费，后续可以根据情况是否续费。手机电脑都可以用，还可以用于团队。</p>
+<p>「Outline」是 Google Jigsaw 开发的一款开放原始码工具，目的是为新闻机构或新闻工作者建立一个更安全、加密的连线管道，当然不仅限于此目的，任何人都可以从官网下载、免费使用，你唯一需要做的就是取得准备好 VPS 或其他云端空间（例如 DigitalOcean）。</p>
+<a id="more"></a>
+<p>Outline 主要由两个程式构成：Outline Manager 和 Outline，两者都必要，前者主要用于建立自己的 VPN，后者则用来连线验证。Outline Manager 支援 Windows、Linux 和 macOS，Outline 额外支援 iOS、Android 及 Chrome OS，几乎涵盖九成以上使用者。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fy34l91y6bj31pw0qg44p.jpg" alt="Outline Manager"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy34laaoaxj31hg0u0jww.jpg" alt="Outline"></p>
+<p>接下来我会使用 Mac 版本搭配 DigitalOcean 示范如何使用，DigitalOcean 每月最低价格 $5 美金，通过我的<a href="https://m.do.co/c/17f1e04722a9" target="_blank" rel="external">推荐链接</a>注册可以先获得 $100 美金，足够使用两个月不用付费。也支援 Linode、Vultr、Google Compute Engine、Amazon EC2 等服务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">网站名称：Outline – Making it safer to break the news</div><div class="line"></div><div class="line">网站链结：https://getoutline.org/en/home</div></pre></td></tr></table></figure>
+<h2 id="在-DigitalOcean-免费注册，取得-100-美元试用额度"><a href="#在-DigitalOcean-免费注册，取得-100-美元试用额度" class="headerlink" title="在 DigitalOcean 免费注册，取得 $100 美元试用额度"></a>在 DigitalOcean 免费注册，取得 $100 美元试用额度</h2><h3 id="STEP-1"><a href="#STEP-1" class="headerlink" title="STEP 1"></a>STEP 1</h3><p>如果你还没有 DigitalOcean 帐户，可以通过我的<a href="https://m.do.co/c/17f1e04722a9" target="_blank" rel="external">推荐链结</a> 获取 $100 美元额度，点击链接后进入官方网站，点选最顶端的链结开始注册（如下图红色箭头标示处）。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy32s1xidjj30zm0n2dri.jpg" alt="登录页面"></p>
+<p>因为是通过邀请链接加入 DigitalOcean 能得到 $100 美元额度，填入 Email 和密码注册一个帐号，这个余额有效期限为60天，只要在时限内用掉就不会过期失效。</p>
+<h3 id="STEP-2"><a href="#STEP-2" class="headerlink" title="STEP 2"></a>STEP 2</h3><p>接着需要验证 Email 并加入一张信用卡或者绑定 PayPal 来验证身份，而且也要这一步验证才能获取 $100 美元余额，这是避免被大量注册或滥用。在余额没用完以前不会从信用卡被扣款。我用的是 PayPal，验证的时候需要扣钱，当时付了 $ 5 美元。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy32t0contj30u00n0gq3.jpg" alt="验证页面"></p>
+<p>验证后到帐户设定页面确实会有 $100 美元余额，如果照 DigitalOcean 最便宜方案每月价格五美元来说，余额足够使用两个月。稍后会来邮件，账户也会多出你验证时付的 $5美元。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy326vxvncj30sm0hcdgw.jpg" alt="账户显示3"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy326ws8yaj30sa0asabd.jpg" alt="账户显示2"></p>
+<p>截图是我的账户显示，原来是 $ 105 美元，赠送的 $100美元+ 验证的 $5美元，现在已经过了7天，账户显示里面赠送的 $ 100美元 只剩 $ 98.81 美元了。</p>
+<h2 id="以-Outline-Manager-建立自己的-VPN-服务器"><a href="#以-Outline-Manager-建立自己的-VPN-服务器" class="headerlink" title="以 Outline Manager 建立自己的 VPN 服务器"></a>以 Outline Manager 建立自己的 VPN 服务器</h2><h3 id="STEP-1-1"><a href="#STEP-1-1" class="headerlink" title="STEP 1"></a>STEP 1</h3><p>取得 DigitalOcean 或其他 VPS 服务的帐号后，我们就可以从 Outline 官方网站下载管理工具 Outline Manager，目前支援 Windows、Linux 和 macOS 三个版本。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fy32tjrez4j30zg0pkq8l.jpg" alt="Outline 官方页面"></p>
+<p>登录 Outline Manager 后，点选下方的「Sign me in」登入 DigitalOcean 帐户。</p>
+<h3 id="STEP-2-1"><a href="#STEP-2-1" class="headerlink" title="STEP 2"></a>STEP 2</h3><p>登入 DigitalOcean 會跳出 Outline 要求讀取和寫入權限的提示訊息，點選「Authorize Application」按鈕允許讓應用程式使用你的帳戶權限。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy332re2rej30x10u0aes.jpg" alt="登录页面"></p>
+<h3 id="STEP-3"><a href="#STEP-3" class="headerlink" title="STEP 3"></a>STEP 3</h3><p>接着就能选择要建立 VPN 服务器的国家，随意哪个都可以。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy334t1655j30z80u0jx6.jpg" alt="选择网络页面"></p>
+<p>选好要建立 VPN 服务器节点后，点选「Set Up Outline」就会开始设定，大约需要一两分钟链接。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy334t1655j30z80u0jx6.jpg" alt="链接状态"></p>
+<p>注意，如果选择国家节点时遇到如下的错误提示，即使关闭防火牆、重新链接数次都不行，那么可以先删除服务器，然后选择其他节点试试。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy33g8d4xoj30v20re425.jpg" alt="出错页面"></p>
+<h3 id="STEP-4"><a href="#STEP-4" class="headerlink" title="STEP 4"></a>STEP 4</h3><p>最后按下「Connect This Device」就能连线到 VPN（如果电脑上还没有 Outline 会跳转到下载页面），跟其他服务不同的是 Outline 会产生一段用以连线的网址，不用辛苦记住帐号密码，只要把那串网址複製贴上就能设定好 VPN 服务器。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy33g4o8t9j30hs0lz760.jpg" alt="地址"></p>
+<h3 id="STEP-5"><a href="#STEP-5" class="headerlink" title="STEP 5"></a>STEP 5</h3><p>建立完 VPN 服务器后会产生一组预设 Access Key，用以验证并登入，想跟其他朋友一起使用同一台 VPN 可以按下「Add Key」产生其他的验证金钥，分享存取同一台服务器权限，不过其他人也必须安装 Outline 才能连结。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fy33ik09coj30tu0xgq7c.jpg" alt="连接状态"></p>
+<h2 id="下载Outline-连接-VPN-，手机电脑都可以用了"><a href="#下载Outline-连接-VPN-，手机电脑都可以用了" class="headerlink" title="下载Outline 连接 VPN ，手机电脑都可以用了"></a>下载Outline 连接 VPN ，手机电脑都可以用了</h2><h3 id="STEP-1-2"><a href="#STEP-1-2" class="headerlink" title="STEP 1"></a>STEP 1</h3><p>前面有提到，Outline 是由两部分构成，也可以说是管理端和用户端，从官方网站下载用户端的 Outline 应用程式或手机 App，然后将 Outline Manager 产生的网址复制黏贴上，就能将服务器加入列表使用。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fy33t3zdhzj30lm0vw494.jpg" alt="复制链接"></p>
+<p>将 Outline Manager 的 Access Key 复制贴上，将 VPN 加入可连线清单。</p>
+<h3 id="STEP-2-2"><a href="#STEP-2-2" class="headerlink" title="STEP 2"></a>STEP 2</h3><p>加入后点选右下角的「连接」就能验证、连接到刚才建立的 VPN 服务器，而通过 Outline 建立 VPN 的 IP 位址会显示于伺服器名称下方。<br>如果你是 macOS 且是第一次使用，会跳出 Outline 想新增 VPN 设定的提示信息，点选左边的「Allow」允许设定，Windows 也会跳出类似提示讯息。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy347hy3myj30q60ymh7k.jpg" alt="连接页面"></p>
+<p>然后你可以打开谷歌浏览器随意输入文字，看看能不能科学上网了。</p>
+<h3 id="STEP-3-1"><a href="#STEP-3-1" class="headerlink" title="STEP 3"></a>STEP 3</h3><p>要特别注意的是，如果以后不想再继续使用 Outline，记得通过 Outline Manager 将 VPN 服务器删除，否则是会继续计费的！当然你也可以直接从云端主机服务商把建立的虚拟主机移除，避免日后被收取费用，这步骤很重要，别忘了你在验证帐户时都有绑定信用卡账户，若超过使用额度就会从信用卡收费。</p>
+<p>Outline VPN 用意不是让你隐藏或伪装身分，而是绕过一些网路限制，或是加密传输重要资料，提高自身隐私和安全性，Google Jigsaw 让使用者更快、更简单部属自己的 VPN 服务，更重要的是随时能够移除或重新建立，避免被追踪或封锁连线，无论是管理或连线工具都支援相当多的平台，如果想要自己架设 VPN 的话或许是个不错的选择。</p>
+<h2 id="Outline-Manager-amp-Outline-比较好的地方"><a href="#Outline-Manager-amp-Outline-比较好的地方" class="headerlink" title="Outline Manager &amp; Outline 比较好的地方"></a>Outline Manager &amp; Outline 比较好的地方</h2><ul>
+<li><p>Google Jigsaw 开发、开放原始码免费 VPN 自动化架设工具</p>
+</li>
+<li><p>支援 Windows、macOS 和 Linux，连线工具亦支援 iOS 及 Android</p>
+</li>
+<li><p>透过 VPS 服务例如 DigitalOcean、Linode 快速建立自己的 VPN</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/科学上网/" rel="tag"># 科学上网</a>
+          
+            <a href="/tags/Outline/" rel="tag"># Outline</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/02/3 -Financial Management02-Three Kinds of wallets /" rel="next" title="三个钱包理财术">
+                <i class="fa fa-chevron-left"></i> 三个钱包理财术
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/我的头像.png"
+               alt="zhailiang" />
+          <p class="site-author-name" itemprop="name">zhailiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Hailiange" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/p/1005052209408084/home?from=page_100505&mod=TAB&is_all=1#place" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/doitdone/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-DigitalOcean-免费注册，取得-100-美元试用额度"><span class="nav-number">1.</span> <span class="nav-text">在 DigitalOcean 免费注册，取得 $100 美元试用额度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-1"><span class="nav-number">1.1.</span> <span class="nav-text">STEP 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-2"><span class="nav-number">1.2.</span> <span class="nav-text">STEP 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以-Outline-Manager-建立自己的-VPN-服务器"><span class="nav-number">2.</span> <span class="nav-text">以 Outline Manager 建立自己的 VPN 服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-1-1"><span class="nav-number">2.1.</span> <span class="nav-text">STEP 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-2-1"><span class="nav-number">2.2.</span> <span class="nav-text">STEP 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-3"><span class="nav-number">2.3.</span> <span class="nav-text">STEP 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-4"><span class="nav-number">2.4.</span> <span class="nav-text">STEP 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-5"><span class="nav-number">2.5.</span> <span class="nav-text">STEP 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载Outline-连接-VPN-，手机电脑都可以用了"><span class="nav-number">3.</span> <span class="nav-text">下载Outline 连接 VPN ，手机电脑都可以用了</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-1-2"><span class="nav-number">3.1.</span> <span class="nav-text">STEP 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-2-2"><span class="nav-number">3.2.</span> <span class="nav-text">STEP 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STEP-3-1"><span class="nav-number">3.3.</span> <span class="nav-text">STEP 3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Outline-Manager-amp-Outline-比较好的地方"><span class="nav-number">4.</span> <span class="nav-text">Outline Manager & Outline 比较好的地方</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhailiang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'Hailiang-1';
+      var disqus_identifier = '2018/12/11/Outline/';
+
+      var disqus_title = "Outline Manager 和 Outline 部署";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
