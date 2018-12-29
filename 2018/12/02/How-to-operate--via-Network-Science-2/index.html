@@ -1,0 +1,920 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网络科学,运营," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="社交网络分析专家 Maksim Tsvetovat等通过实验发现，当网络密度接近 7% 时，信息将从一条一条的线性增长转化为病毒式扩散。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用网络知识做运营(下)">
+<meta property="og:url" content="http://zhailiange.com/2018/12/02/How-to-operate--via-Network-Science-2/index.html">
+<meta property="og:site_name" content="Hailiang's Blog">
+<meta property="og:description" content="社交网络分析专家 Maksim Tsvetovat等通过实验发现，当网络密度接近 7% 时，信息将从一条一条的线性增长转化为病毒式扩散。">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxzfuxoehhj30ku0ewgmv.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fyo1m675smj30uq0f8mym.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fyo1lce4y9j30ow0iimz8.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy393qu8q6j30rc0kktc4.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy4iaekvvjj30v00h6400.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy4f3qmpwlj30yg0fijtu.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy4ea881uyj31360fm7a5.jpg">
+<meta property="og:updated_time" content="2018-12-29T15:55:01.584Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何用网络知识做运营(下)">
+<meta name="twitter:description" content="社交网络分析专家 Maksim Tsvetovat等通过实验发现，当网络密度接近 7% 时，信息将从一条一条的线性增长转化为病毒式扩散。">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxzfuxoehhj30ku0ewgmv.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhailiange.com/2018/12/02/How-to-operate--via-Network-Science-2/"/>
+
+
+
+
+
+  <title> 如何用网络知识做运营(下) | Hailiang's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-96572635-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hailiang's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://zhailiange.com/2018/12/02/How-to-operate--via-Network-Science-2/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="zhailiang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/我的头像.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hailiang's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hailiang's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何用网络知识做运营(下)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-02T18:14:29+08:00">
+                2018-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Become/" itemprop="url" rel="index">
+                    <span itemprop="name">Become</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/02/How-to-operate--via-Network-Science-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/02/How-to-operate--via-Network-Science-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>社交网络分析专家 Maksim Tsvetovat等通过实验发现，当网络密度接近 7% 时，信息将从一条一条的线性增长转化为病毒式扩散。</p>
+</blockquote>
+<a id="more"></a>
+<p>在上一篇我们介绍了我们所处的社会环境、网络特性及其所遵循的规律，还有信息传播过程。在一篇，我们就详细介绍下，如何根据我们前面所说的内容，如何让自己的产品、内容在网上疯传。</p>
+<p>首先，我们从网络本身来说。</p>
+<h2 id="什么样的网络才能引发信息的全局性级联？"><a href="#什么样的网络才能引发信息的全局性级联？" class="headerlink" title="什么样的网络才能引发信息的全局性级联？"></a>什么样的网络才能引发信息的全局性级联？</h2><h3 id="网络中的三类人"><a href="#网络中的三类人" class="headerlink" title="网络中的三类人"></a>网络中的三类人</h3><p>我们知道，每个人在面对新事物时都有一个心理接受程度。比如，有的人心态开放，喜欢追逐新事物、新时尚，我们可以称之为“活跃”；有些人则比较“顽固”，不管外部发生什么，我则岿然不动，坚守自己已经接受的东西，我们称之为“稳定”。</p>
+<p>我们大部分人则处在这两个极端中间，受周围人或者其他信息影响，而采取行动。在网络信息传播之中，前者属于“易感”人群，后者则属于“稳定”人群，中间的部分可以算是“常态”人群，因为他们代表许多人最平常的状态。</p>
+<p>可以说，在任何一个正常的网络中，都包含于上述三类人群，只是他们所在网络中的比例不同而已。</p>
+<p>在当一个新事物或者新信息被引入到一个正常网络中，只有这个新事物或者新信息制造者或者鼓动者（通常是运营人员/八卦传播者）让其中的一些人成为早期接纳者，信息才可能扩散。显然，早期接纳者越多，扩散的可能性越大。</p>
+<p>随着这个群体中的人越来越多地从不活跃成为活跃，如果其中的某个人或者某些人“击中”了整个网络中处于某个位置的“易感”集群（比如活跃份子的小圈子），那么，这个信息就会引发全局性的信息级联，因为这些活跃分子会将信息带到其他人群之中“传染”他们。</p>
+<p>所以，如果网络中包含这样一个易感的、能传染其他人的群体，那么全局性级联有可能发生。否则，全局性级联很难出现。因为，信息在激活了网络中一小部分的“稳定”人群之后就停止了。</p>
+<h3 id="网络的连通性与信息级联相位图"><a href="#网络的连通性与信息级联相位图" class="headerlink" title="网络的连通性与信息级联相位图"></a>网络的连通性与信息级联相位图</h3><p>为了描述这种全局性级联现象，“小世界网络”理论的提出者邓肯·瓦茨于2002年提出了信息级联相位图。这个模型表示的是当一群人必须在两个选择之间做出决定时，他们的选择取决于其他人的状态或选择。所下图所示：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxzfuxoehhj30ku0ewgmv.jpg" alt="信息级联模型相位图"></p>
+<p>图中横轴是阈值分布的平均值，也就是个体对新事物、新思想、新信息的拒绝程度。纵轴则是网络中个体的邻居平均数，网络当中邻居对个体都有一定的影响。在发生全局信息级联和未发生信息级联之间有一个临界点，在图中代表的是这些临界点连成的黑线。在黑线以内，全局性的信息级联有可能但不一定发生；而在这个窗口外，全局的级联现象则永远不会发生。</p>
+<p>如图中点P， P 是信息级联不会发生的一个状态。从点 P 出发，可以通过两种方式导致信息级联的发生，一种方式是降低人们的平均阈值，或者等价地说，提高产品或信息的吸引力，如向左的箭头所示；另一种方式是降低网络的密度，如向下的箭头所示。</p>
+<p>从上图我们可以知道，无法发生全局性级联有三种情况：</p>
+<blockquote>
+<p>一是网络中每个人的阈值即接收信息的拒绝意愿程度非常高，即便有许多人向他传播信息，网络都不会发生变化；</p>
+<p>二是网络连通性差，也就是位于级联窗口的底部那条边的下界。当信息传播占据整个网络中可以感染的节点后，就无法进行下去只能停止了；</p>
+<p>三是高连通性的网络，也就是位于级联窗口的顶部那条黑线的上界。网络连通性差导致信息无法流传，这个我们可以理解，为什么连通性高也会阻止信息级联发生呢？</p>
+</blockquote>
+<p>前面我们说到，大部多数情况下，大多数的人群，都属于中间的“常态”，不是太活跃，也不是太稳定。这样，如果想要改变这种状态，使之“感染”，就需要外部给予一定的影响。即需要这个人身边的朋友影响他去接受这个新信息。</p>
+<p>这样，他的朋友数量和分量就成了他能否被“感染”的主要因素。用网络科学中的术语说是，个体的决策阈值即他的决策容易受到周围人影响的程度，取决于它所连接的节点数量和节点对它的影响力。但在现实生活中，我们的选择更容易受到节点数或者说人数的影响。</p>
+<blockquote>
+<p>以买电脑为例，当你在犹豫选择哪个品牌的电脑时，只有一个人给你提供建议时，你会慎重考虑，而如果是五个人同时向你提供建议，你也许会好好斟酌下他们五个每人的意见，但对每个人意见的重视程度就被稀释了，远没有只询问一个人那么重视。即便其中一人和你非常亲密，往常他的意见对你影响很大，但随着人数的增多，你对他的倚重越来越小，这就削弱了他对你的影响。</p>
+</blockquote>
+<p>也就是说，在高连通性的网络中，每个人都能获得足够的信息，那么单一的节点影响就被削弱，个体保持稳定，进而整个网络保持稳定。</p>
+<p>所以，我们看到，能否发生全局性信息级联现象，取决于这个网络的连通性，而与产品本身的特性（能够吸引人的程度）关系并没有我们想象的那么大。连通性差不行，连通性过高也不行。</p>
+<h3 id="全局性级联发生的偶然性"><a href="#全局性级联发生的偶然性" class="headerlink" title="全局性级联发生的偶然性"></a>全局性级联发生的偶然性</h3><p>需要注意的是上面的第三种情况，即在这个信息级联模型相位图的顶部界线上，易感节点的密度足以使网络中包含一个易感可渗透集的地方。换句话说，在这个图的顶部边界，由于他们每个人连接多个邻居，这就构成了一个高连通性的易感染集群。</p>
+<p>在这个这集群中，已接受“传染”的早期接纳者们和未接受“传染”的其他高链接节点数的人混在一起（顶部临界线内外交接区域），从外部看，这个高连通性的网络区域是稳定的。不过，一旦这些节点被多个早期接纳者所“传染”，这种影响超过稳定节点的阈值后，全局级联立即出现，信息或产品马上流行疯传起来。正如邓肯·瓦茨所言：</p>
+<blockquote>
+<p>在社会传染中，一个系统只有在局部稳定性和全局连通性之间取得一定的平衡时，才能够发生全局性级联。</p>
+</blockquote>
+<p>不过，我们从中我们可以看出，这其间存在很大的随机性和不可预测性，如果早期接纳者者击中了易感可渗透集，全局性级联将会成功，否则会失败。</p>
+<p>结果是，在全局性级联事情发生之前，我们很难看清处于某个状态下的一些事情，最终会产生何种结果。而当全局性级联发生后，我们大多会受“事后诸葛亮”的认知偏差影响，将成功归因于产品或者内容设计本身，而不会想到级联的产生可能只是觉得它可有可无的参与者之间的交互类型造成的。</p>
+<p>它给我们的启示是什么呢？在运营和营销当中，我们可能过于偏重内容或产品本身的设计而忽视了它们所要传播的网络结构。</p>
+<h2 id="什么情况下才能跨越鸿沟？"><a href="#什么情况下才能跨越鸿沟？" class="headerlink" title="什么情况下才能跨越鸿沟？"></a>什么情况下才能跨越鸿沟？</h2><p>我们从全局级联相位图中可以看出，图中的那一条黑线是发生级联与未发生之间的临界线。那么，在什么情况下会跨越鸿沟出现全局性信息级联呢？</p>
+<p>通过上面的介绍我们知道，在一个包含活跃与不活跃人群的社会网络中，要使得他们“传染”，起作用的是邻居中感染者与未感染者的比例。</p>
+<p>社交网络分析专家 Maksim Tsvetovat等通过实验发现，当网络密度接近 7% 时，信息将从一条一条的线性增长转化为病毒式扩散。也就是说，当有意采纳这个信息、转发一个视频的人，在他们的网络社群里接受或传播的比例达到 7% 的时候，其他人将会在关键阶段马上跟进。Maksim Tsvetovat指出，这是一个推动 Facebook 走出哈佛的神奇数字。</p>
+<p>为什么是 Facebook 流行起来，而是不是它之前还要有名的 SixDegrees 、MySpace 和 Friendster？要知道，在 Facebook 最开始的时候，它仅仅是哈佛大学一个本科生组成的小而紧密的网络社群。Facebook 做对了什么？</p>
+<p>Maksim Tsvetovat 等人发现，与 SixDegrees 和 Friendster Facebook 的传播轨迹不同，Facebook从未错过从一个社群到另一个社群的信息级联临界线，它是在一个社群里饱和点之后才移入一个更大的社群。而 SixDegrees 之所以失败，就是因为它在传播过程中没有达到临界值。</p>
+<p>他们分析，创立于本来就小的社区使得 Facebook 可以快速到达增长的临界值。实际上，在它上线约四个小时内，就已经吸引了450个访问者，或者全校大约6%的本科生。</p>
+<p>在产品早期，尽管 Facebook 经历了一系列反复，但经过一个易于扩展的设计后，Facebook最终覆盖哈佛大学50%的本科生而达到饱和。从那时起，它的触角开始伸向其他常青藤高校，一个接一个，最终覆盖了美国所有大学。最后在2005年，它开始面向高中生，并奠定了它主宰世界的基础。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyo1m675smj30uq0f8mym.jpg" alt="扩散曲线"></p>
+<p>7%并不是唯一的临界值。他们在研究其他案例发现，只要当网络中的采纳比例小于10%时，就会发生病毒式扩散。</p>
+<p>而对比Maksim Tsvetovat 等人的分析，我们就可以了解到，为什么大部分产品或内容没有流行起来。其中的一个原因就是，他们最开始推广范围错了，总是想着在全网或全社会铺开，而忽视了小社群及其临界值。</p>
+<h2 id="什么样的早期接纳者才是好的种子用户"><a href="#什么样的早期接纳者才是好的种子用户" class="headerlink" title="什么样的早期接纳者才是好的种子用户"></a>什么样的早期接纳者才是好的种子用户</h2><p>在上一篇，我们解释什么是信息级联时提到，信息级联是一旦有一点开始，它将会自己延续。那，最开始的那“一点”是什么呢？</p>
+<p>这一点就是早期的接纳者。早期接纳者是群体中那些首先被外界的刺激影响的人，或者是率先使用某个新产品或服务并且还向他人推荐的人。</p>
+<p>为了解释时尚和流行病的出现和消失，社会学家与流行病学家发明了一个非常有用的工具，叫做“阈值模型”。就像我们前面说的网络上的三类人一样，人们接受新事物的意愿有强有弱。除了少数的极端如“易感”、“稳定”，大部分人属于两者之间。而阈值模型就是赋予每个人一个阈值，来量化这个人接受某个新事物的可能性。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fyo1lce4y9j30ow0iimz8.jpg" alt="关键阈值"></p>
+<p>与阈值相关的，还有一个传播率“”即人们在接触到任何一个新事物后采纳它的可能性。如果一个产品或内容的传播率低于临界阈值，它很快就会消亡；如果传播率高于该阈值，接受该创新的人数将会呈指数增长，直到所有潜在接受者都接受为止。这也是我们前面提到的信息级联相位图所要表达的意思。</p>
+<p>那么，在传播开始的第一步，什么样的早期接纳者更有利于新事物传播扩散下去呢？显然“易感”人群最容易成为早期接纳者。因为在其他节点处于稳定的状态下，它已经在相邻节点的最小可能影响下被激活。</p>
+<p>邓肯·瓦茨发现，一个节点处于以下两种情形之一时会成为易感的：</p>
+<p>一种是它有一个比较低的阈值，很容易激活，这就是上面说的“易感”人群，活跃分子；</p>
+<p>另一种情况是与它相邻的节点很少，这样每个相邻节点给它带来的相对影响力都会非常明显。</p>
+<p>但在实际生活中，与明显的相邻节点数目或者说朋友数量不同，个人的阈值比较内隐，我们很难去确定他的决策阈值是多少，并且，每个人的阈值各不相同。那么，怎么办呢？</p>
+<h3 id="作为邻居数量一定的种子用户"><a href="#作为邻居数量一定的种子用户" class="headerlink" title="作为邻居数量一定的种子用户"></a>作为邻居数量一定的种子用户</h3><p>邓肯·瓦茨发现，只要我们把握一个节点度的临界上限，就可以在任意阈值情况下，判断它是否是易感节点，能否成为种子用户。所谓度的临界上限，就是一个节点可以被任意一个邻居激活时，它所拥有的最大邻居数目。我们在上一篇提到过，度指的是一个节点拥有的邻居的数目。所以，观察一个人的朋友数量就成为选择早期接纳者或者说种子用户的有效方法。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fy393qu8q6j30rc0kktc4.jpg" alt="度的临界上限"></p>
+<p>上图是我们假定知道 A 的阈值后，对A 点是否被传染的分析。假设 A 的阈值是 1/3 ，当它的3个邻居中有一个是活跃的，那么活跃节点所占A所有节点的 1/3，达到了它的阈值，节点 A 被激活，成了早期接纳者，它的度的临界上限就是3。在图的下部分，当 A 的邻居变成 4 后，活跃节点仅占所有节点的四分之一，达不到 A 的阈值，节点 A 无法激活。</p>
+<p>如果从度的临界上限来考虑，我们明显可以看出 A 有三个邻居，其中一个是活跃的（或者说是信息发布者）。假如 A 此时被这个活跃邻居激活，成为早期接纳者。那么，我们说，A 的度的临界上限是3。而一旦 A 的邻居变成了4，其中只有一个活跃，那么，它的临界上限少于邻居数目，此时 A 就不会成为早期接纳者。这也从一个角度说明了，当网络的连通性提高时，信息的传染效果也并不一定好于连通性差的网络。</p>
+<p>当然，尽管实际工作中，我们并不清楚所面对的群体或者说潜在用户它们的决策阈值是多少，但可以通过提高产品或者信息本身的吸引力，来变相地降低阈值，增加他们成为早期接纳者、种子用户的几率。</p>
+<h3 id="作为种子用户的枢纽人物"><a href="#作为种子用户的枢纽人物" class="headerlink" title="作为种子用户的枢纽人物"></a>作为种子用户的枢纽人物</h3><p>除此之外，如果早期接纳者中包含社会网络中的枢纽人物，如意见领袖、幕后大佬、八卦传播者、跨界者。那么，他们将是强力的种子用户。我们看早期的知乎就是通过邀请意见领袖或行业专家来作为种子用户发展起来的。</p>
+<p>不过需要注意的是，就像邓肯所言：</p>
+<blockquote>
+<p>大树一直以奢侈的数量来播撒它的种子，理由是只有这些种子中的极少数才能长大、开花、结果，不是因为这些种子具备某些特殊的、独一无二的质量，而是因为它落到了合适的地点。</p>
+</blockquote>
+<p>我们的种子用户也是如此，最终成败与他们自身特性的关系，远不如以他们为中心的群体间自身交互类型关系来得密切。换句话说，即便你的种子用户中有意见领袖和八卦传播者，但他们不传播你的产品或内容，那也是白搭。在运营中，我们称这类用户为“沉默用户”。</p>
+<h2 id="疯传对内容本身的要求"><a href="#疯传对内容本身的要求" class="headerlink" title="疯传对内容本身的要求"></a>疯传对内容本身的要求</h2><p>前面我们说过，任何一种创新或者说新事物都有一定的“传播率”，即人们在接触到该创新之后采纳它的可能性。而要使之疯传，首先它们本身必须要吸引人，有能让人传播的属性。等价说法是，它们要能降低人们的决策阈值，能让人很容易接受它。</p>
+<p>所以，在网络流行中，内容质量的好坏可以归结为，能否降低人们阈值，或者说降低他们的接受/参与成本。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fy4iaekvvjj30v00h6400.jpg" alt="参与成本"></p>
+<p><strong>什么样的内容，能够降低人们的接受阈值呢？</strong></p>
+<p>2017年10月，BuzzFeed 发行人 Dao Nguyen 在 TED 演讲上，分享了她们团队如何让一件事情像病毒一样传播开来。</p>
+<p>BuzzFeed 是美国一家非常著名的数字媒体公司，他们因爆炸西瓜、裙子的颜色、“鬼魂学校”的调查、亲爱的小猫等文章或视频在网络上疯传而知名，并靠这种病毒式传播指数的成功赢得广告商，获得收入。</p>
+<p>在 TED 演讲中，她向我们介绍，当人们在问“如何让一件事情像病毒一样传播开来”时，他们的关注点就错了。问题不应该是关于“某事”，而是关于“人们在做这件事时他们在想什么”。</p>
+<p>很多媒体公司，在思考元数据时，想的主要是主题或者形式。比如这个视频是关于动物的、食物的、办公室恶作剧的，格式方面要求是2000个字、15分钟的长度等。</p>
+<p>对此，Dao Nguyen的建议是，与其贴上这些文章或者视频是关于什么的标签，不如思考它是如何帮助我们的用户在生活中完成一件事情的。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy4f3qmpwlj30yg0fijtu.jpg" alt="对比图"></p>
+<blockquote>
+<p>What is it about? → How is it helping our users do a real job in their lives ?</p>
+</blockquote>
+<p>然后，他们依此制定了一个 文化制图 （Cultural cartography）。根据 Dao Nguyen 的说法，内容必须满足其中一个需求才能让观众喜欢和分享：</p>
+<ul>
+<li><p>“让我笑”（幽默）</p>
+</li>
+<li><p>“这是我”（身份）</p>
+</li>
+<li><p>“帮助我连接”（这是我们）</p>
+</li>
+<li><p>“帮助我……”（学点东西，做点什么等）</p>
+</li>
+<li><p>“让我觉得……”（好奇，悲伤等）</p>
+</li>
+</ul>
+<p>那些抖音视频、小测试、微信文章之所以火，就是因为它们的内容本身能够引人发笑/定义自我/让我觉得……(或引发共鸣或同仇敌忾)。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy4ea881uyj31360fm7a5.jpg" alt="文化制图"></p>
+<p>此外，前面我们提到的 Maksim Tsvetova，他们在对信息扩散进行社会网络的定量分析外，还从定性的方面，将信息的作用分解为几个维度的变量：</p>
+<ul>
+<li><p>相关性或显著性：我是否关心？我现在是否在乎？</p>
+</li>
+<li><p>共鸣：信息的内容和我所相信的内容是否一致？</p>
+</li>
+<li><p>严重性：信息的内容有多好或多坏？</p>
+</li>
+<li><p>紧迫性：这个信息是否需要马上行动？与严重性一起，表示看到信息后(不做出任何行动)的后果。</p>
+</li>
+<li><p>确定性：这个信息的效果是否会导致某种痛苦或者快乐？或者这种概率非常小？</p>
+</li>
+<li><p>信源：信息来自哪里？我是否信任发出信息的人？这是否曾被人们所验证？</p>
+</li>
+<li><p>娱乐价值：信息是否好玩？是否耐读？</p>
+</li>
+</ul>
+<p>以上，是从内容本身这个因素方面，考虑什么样的信息更容易引发疯传。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>到了现在，这篇文章基本该结束了。在本文中，我们介绍了网络对全局性级联发生的限制性条件，在什么样的情况下，信息可以跨越鸿沟传播到另一个网络社群，还有种子用户的属性以及内容本身的要求。从中我们可以发现，人们在运营传播中存在的几个误区：</p>
+<ul>
+<li><p>在社群运营或用户运营过程，过于重视意见领袖而忽视了其他枢纽人物。</p>
+</li>
+<li><p>过于看重内容本身的质量，而忽视了网络的连通性</p>
+</li>
+<li><p>在新产品推广时，没有达到最开始小范围的传播临界值甚至内饱和，就想扩散到下一个区域。</p>
+</li>
+<li><p>过于关注种子用户的“忠诚”、“铁杆”，忽视了种子用户的实质是“易感”用户，是“易感渗透集群”</p>
+</li>
+<li><p>在种子用户中，没有发挥网络中枢纽人物的链接互动作用</p>
+</li>
+</ul>
+<p>所以，为了更加容易引发产品或内容疯传，我们可以开列一个清单，</p>
+<ul>
+<li><p>对照内容设计要求，使得内容或产品本身能够降低人们的接受阈值</p>
+</li>
+<li><p>拥有阈值较低、且链接人群较多的易感种子用户</p>
+</li>
+<li><p>拥有至少一个成员多样性的小社群，保证网络连通性合适</p>
+</li>
+<li><p>找到社群中的意见领袖、八卦传播者、跨界者，促使他们参与进来</p>
+</li>
+<li><p>促使网络密度接近 7%，即最开始传播的人群比例占社群所有人数的7%</p>
+</li>
+</ul>
+<p>…….</p>
+<p>所以，运营是什么？运营不是拉新、促活、留存、转化，这些只是工作的表象。运营是产品或服务的网络编制者，本质是运营网络的连通性。</p>
+<p>需要注意的是，以上只是让信息的全局性级联或者说产品、内容发生疯传的概率不断逼近成功，但不能肯定实现。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络科学/" rel="tag"># 网络科学</a>
+          
+            <a href="/tags/运营/" rel="tag"># 运营</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/25/job/" rel="next" title="我们应该如何对待工作或职业？">
+                <i class="fa fa-chevron-left"></i> 我们应该如何对待工作或职业？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/02/How-to-operate--via-Network-Science-1/" rel="prev" title="如何用网络知识做运营(上)">
+                如何用网络知识做运营(上) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/我的头像.png"
+               alt="zhailiang" />
+          <p class="site-author-name" itemprop="name">zhailiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Hailiange" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/p/1005052209408084/home?from=page_100505&mod=TAB&is_all=1#place" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/doitdone/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么样的网络才能引发信息的全局性级联？"><span class="nav-number">1.</span> <span class="nav-text">什么样的网络才能引发信息的全局性级联？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络中的三类人"><span class="nav-number">1.1.</span> <span class="nav-text">网络中的三类人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络的连通性与信息级联相位图"><span class="nav-number">1.2.</span> <span class="nav-text">网络的连通性与信息级联相位图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局性级联发生的偶然性"><span class="nav-number">1.3.</span> <span class="nav-text">全局性级联发生的偶然性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么情况下才能跨越鸿沟？"><span class="nav-number">2.</span> <span class="nav-text">什么情况下才能跨越鸿沟？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么样的早期接纳者才是好的种子用户"><span class="nav-number">3.</span> <span class="nav-text">什么样的早期接纳者才是好的种子用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作为邻居数量一定的种子用户"><span class="nav-number">3.1.</span> <span class="nav-text">作为邻居数量一定的种子用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作为种子用户的枢纽人物"><span class="nav-number">3.2.</span> <span class="nav-text">作为种子用户的枢纽人物</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#疯传对内容本身的要求"><span class="nav-number">4.</span> <span class="nav-text">疯传对内容本身的要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhailiang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'Hailiang-1';
+      var disqus_identifier = '2018/12/02/How-to-operate--via-Network-Science-2/';
+
+      var disqus_title = "如何用网络知识做运营(下)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,833 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网络科学,运营," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="音乐会结束时，为什么只要一个人开始鼓掌，就能带动整个音乐厅的观众一起鼓掌？为什么原先名不见经传的人发布了一个视频或一首歌就可以一夜成名？为什么有些产品或文章会突然刷爆你的朋友圈？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用网络知识做运营(上)">
+<meta property="og:url" content="http://zhailiange.com/2018/12/02/How-to-operate--via-Network-Science-1/index.html">
+<meta property="og:site_name" content="Hailiang's Blog">
+<meta property="og:description" content="音乐会结束时，为什么只要一个人开始鼓掌，就能带动整个音乐厅的观众一起鼓掌？为什么原先名不见经传的人发布了一个视频或一首歌就可以一夜成名？为什么有些产品或文章会突然刷爆你的朋友圈？">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy0ewt6fdbj30qi0h4di2.jpg">
+<meta property="og:updated_time" content="2018-12-29T15:54:59.579Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何用网络知识做运营(上)">
+<meta name="twitter:description" content="音乐会结束时，为什么只要一个人开始鼓掌，就能带动整个音乐厅的观众一起鼓掌？为什么原先名不见经传的人发布了一个视频或一首歌就可以一夜成名？为什么有些产品或文章会突然刷爆你的朋友圈？">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy0ewt6fdbj30qi0h4di2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhailiange.com/2018/12/02/How-to-operate--via-Network-Science-1/"/>
+
+
+
+
+
+  <title> 如何用网络知识做运营(上) | Hailiang's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-96572635-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hailiang's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://zhailiange.com/2018/12/02/How-to-operate--via-Network-Science-1/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="zhailiang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/我的头像.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hailiang's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hailiang's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何用网络知识做运营(上)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-02T18:14:29+08:00">
+                2018-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Become/" itemprop="url" rel="index">
+                    <span itemprop="name">Become</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/02/How-to-operate--via-Network-Science-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/02/How-to-operate--via-Network-Science-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>音乐会结束时，为什么只要一个人开始鼓掌，就能带动整个音乐厅的观众一起鼓掌？<br>为什么原先名不见经传的人发布了一个视频或一首歌就可以一夜成名？<br>为什么有些产品或文章会突然刷爆你的朋友圈？<br><a id="more"></a><br>通常，我们会分析，那是因为音乐会的音乐很好听，因为他的视频或歌曲很有趣，因为那个产品设计或文章内容很好。比如，沃顿商学院市场营销学教授乔纳•伯杰就曾他的畅销书著作《疯传》中指出，想要让一个产品、思想、行为流行起来，需要具备六个原则中的几个或者全部。这六个原则是社交货币、诱因、情绪、公共性、实用价值、故事。</p>
+<p>但真的是这样吗，疯传和流行仅仅是因为产品、思想、行为的本身吗？</p>
+<p>与乔纳•伯杰分析的不同，《纽约客》专职作家格拉德威尔认为，想要流行，除了产品、信息等事物本身，用他的话来说是除了强附着力因素外，还需要另外两个条件，即个别人物法则和环境威力法则。格拉德威尔认为，个别人物法则尤其是联系员、内行和推销员，他们是信息传播活动中的关键人物，没有他们带动，信息或产品传播不起来；而环境威力法则在流行中起着非常重要的作用，因为外部环境的微小改变包括其发生条件、时间、地点、人群都能给我们的行为带来巨大影响。</p>
+<p>不过在这里，我们不用格拉德威尔的观点来分析流行传播，而是从网络演化的角度来分析如何让一个产品获取关注，迅速流行起来。前一篇，我们以“运营”为例介绍了职业系统的演化，并分析了我们如何在其中抓住大的职业机会。这一篇，我们就聊聊如何做运营。换句话说，在这一篇文章中，我计划用“工作人”的知识——网络科学来指导实际工作，特别是运营和营销。</p>
+<h2 id="我们都镶嵌在一个巨大而又微小社会网络里"><a href="#我们都镶嵌在一个巨大而又微小社会网络里" class="headerlink" title="我们都镶嵌在一个巨大而又微小社会网络里"></a>我们都镶嵌在一个巨大而又微小社会网络里</h2><p>首先，我们需要认清一个事实：不论是在工业社会，还是如今的互联网社会，我们都镶嵌在一个巨大而又微小的社会网络里。</p>
+<p>交通网、电力网、通讯网、互联网、万维网——这是一个网络社会。每个网络都有其节点。节点在不同领域有不同的含义，交通网中的节点是道路交叉的地方，电力网的节点是每一个电线杆，通讯网的节点是每一部电话，互联网的节点是计算机，万维网的节点是网站，而社会网络中的节点就是人。</p>
+<p>除了生活在现实的人际网，我们在大街上看见一个个“低头族”，看似互不搭理、互不关联，实际上他们会在另一个虚拟空间中相遇，然后串联起了社交网络，并结为网上社群。</p>
+<p>网络有一个特征，即小世界特性。在这种网络中，大部分节点彼此并不相连，但任意节点之间只需要经过几步就可以将其他节点连接。社交网络同样存在这一特性，任何两个人之间存在大量长短不一的路径，只要连接，就能找到想要找的人。</p>
+<p>关于小世界网络，第一次的实验研究来自哈佛大学教授斯坦利·米尔格拉姆。</p>
+<p>1969年，米尔格拉姆想要知道，到底需要多少个链接才能把两个相距遥远的人联系起来。他通过发邮件让威奇托和奥马哈两地居民参与进来，最后发现，想要把邮件寄回波士顿的哈佛大学中间平均需要5.5个人，5.5四舍五入后是6，这就是著名的“六度分隔”。不过，“六度分隔”这个名词并非由米尔格拉姆提出的，而是来源于一部戏剧。</p>
+<p>1999 年邓肯·瓦茨发表了介绍小世界的著作《小小世界：有序与无序之间的网络动力学》。在书中，他通过随机网络的电脑模拟 α 模型和 β 模型，以及分析凯文·贝肯游戏中明星关系、电力网络、虫子的神经网络等，证明了小世界网络的存在。</p>
+<p><img src="" alt="α 模型和 β 模型"></p>
+<p>他指出，任何一个包含一定秩序并存在一些无序的网络都可以是一个小世界网络。这个秩序最初可能是社会性的，就像社会网络中朋友之间的连接方式，或者是物理上的，如电站之间的地理分布，这些都无关紧要。</p>
+<p>小世界网络具有两个重要特征，一是平均路径较短，二是传递性好。</p>
+<p>所谓平均路径较短是说，即便是在高度分离的地方集群网络中，任何节点只需经过一些步骤就可以被其他的节点所连接。换句话说就是，人们在社会网络上经过数量不多的中间人就可以找到他们想找的人。</p>
+<p>传递性好是指，一个人的众多朋友中的大多数彼此也是朋友。所以，每当我们参加一个朋友的聚会，都会感叹“世界好小”。</p>
+<p>在社会网络中，还有一种关系叫弱联系。它是处于一个小世界网络中却能连接外部的桥梁节点，我们通常叫它跨界者。</p>
+<p><img src="" alt="弱联系"></p>
+<p>小世界网络具有两个重要特征，一是平均路径较短，二是传递性好。所谓平均路径较短是说，即便是在高度分离的地方集群网络中，任何节点只需经过一些步骤就可以被其他的节点所连接。换句话说就是，人们在社会网络上经过数量不多的中间人就可以找到他们想找的人；传递性好是指，一个人的众多朋友中的大多数彼此也是朋友。所以，每当我们参加一个朋友的聚会，都会感叹“世界好小”。</p>
+<p>人类学家<br>脑的进化，也就是变大，是由于要应付更大的交往圈子。如果你的圈子有5个人，你需应对10个单独的关系：你和圈子里的另外4个人，加上其余4个人相互之间的6个</p>
+<p>###我们的关系呈幂律度分布</p>
+<p>除了小世界特性外，网络还有一个特性，那就是网络中的节点链接呈幂律分布。所谓幂律分布就是一条没有峰，且不断递减的曲线。与我们常见的正态分布相比，它的衰减速率要小很多， 这意味着什么呢？意味着极端事件出现的可能性非常大。</p>
+<p>我们知道，每一个幂律都有一个幂指数。在万维网中，通过幂指数我们可以得知，相对于那些不流行的网页，到底有多少非常流行的网页。在任何一个网络，包括电力网、通讯网、互联网、万维网，幂律都可用于描述度的分布，所谓度，就是一个节点拥有的邻居的数目。幂指数通常被称为度指数。</p>
+<p>财富分布“富者更富”就是一个很好的幂指数例子。19 世纪经济学家维尔弗雷多· 帕累托就发现，意大利80%的土地被20%的人口占有，然后，他对其他多个国家进行了调查，结果发现它们都呈现类似的分布。后来，人们把这种规律叫80/20定律，即20%的人拥有社会80%的财富。</p>
+<p>网络节点的链接也是如此，大多数节点只拥有少数几个链接，整个网络的节点通过这少数几个拥有大量链接的枢纽连接在了一起。这样，这些少数的枢纽节点就在很大程度上决定了网络的结构及其连通性。</p>
+<p><img src="" alt="中心性"></p>
+<p>在社会网络分析中，我们把网络中的独立行动者看作节点，把行动者之间的互动关系看成链接。其中常见的中心性枢纽节点有：</p>
+<ul>
+<li><p>居于程度中心性节点的明星或意见领袖（ degree centrality）</p>
+</li>
+<li><p>高度影响程度中心的特征向量中心性节点，我们称之为幕后大佬或灰衣主教（eigenvector centrality）</p>
+</li>
+<li><p>亲近中心性节点的八卦传播者（closeness centrality）</p>
+</li>
+<li><p>居间中心性的跨界者（betweeness centrality）</p>
+</li>
+</ul>
+<p>而在社群运营或用户运营过程，大多数人所犯的一个错误就是，过于重视意见领袖而忽视了其他枢纽人物。</p>
+<p>除此之外，幂律对网络特别是复杂网络还有一个意义。幂律代表着复杂系统正从混沌向有序转变，它经常出现在相变的临界点附近。所谓相变，是一个物理学术语，它是指从无连接的相位跳跃到有连接的相位的一种突变，而突变开始发生的那个点被称为临界点。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy0ewt6fdbj30qi0h4di2.jpg" alt="临界点"></p>
+<p>图中曲线最先开始向上走的地方，就是临界点，这是一个非常重要的概念，我们在下文还会提到。</p>
+<p>在复杂网络中，受生长机制和偏好连接的影响，每个网络都是从一个小核开始，通过添加新的节点而增长。然后，这些新节点在决定连向哪里时，会倾向选择那些拥有更多链接的节点，于是枢纽节点生成。也就是说，枢纽节点是幂律的结果，而幂律是自组织和有序的标志。</p>
+<h2 id="信息是如何在网络中流传的？"><a href="#信息是如何在网络中流传的？" class="headerlink" title="信息是如何在网络中流传的？"></a>信息是如何在网络中流传的？</h2><p>前面我们介绍网络的小世界特性和节点连接的幂律分布，以及简单介绍了枢纽节点的分类。那么，如果我们想要让产品或者文章在网上疯传，应该怎么做呢？</p>
+<p>首先，两个节点必须在同一个连通分支上，否则它们无法交流。所以，要想传播，人际网络或者社交网络必须要有一定连通性，而网络的小世界性保证了这点。</p>
+<p>其次，网络遵循幂律度分布，少数的枢纽节点联系着大量离散节点。想要使得信息快速扩散，最好的办法是让信息从枢纽节点那里向外流出，以此扩散到相连的各个离散节点。当然，也可以从任一节点流出，然后经过枢纽节点的分发流传。</p>
+<p>再次，想要实现信息从一个网络跨越鸿沟传播到另一个网络，这就需要拥有弱联系的人在其中需要发挥不可替代的桥梁作用。</p>
+<p>最后，产生全局性的信息级联，重复第二点，让信息在新传入的网络中经由枢纽节点再次传播开来，由此掀起流行潮流。</p>
+<p>从上面的信息在网络传播的过程，我们可以看出其中涉及到几个因素：</p>
+<p>1.要有能引发传播的信息，这是前提。信息可以是新发明，新产品、新内容如文章、视频等。</p>
+<p>2.拥有一批早期采纳者作为传播扩散的种子用户；</p>
+<p>3.拥有一个网络社群，其结构要有一定连通性；</p>
+<p>4.能够促使网络中的枢纽节点传播你的信息；</p>
+<p>5.能促使跨界者跨域鸿沟，“感染”另一个网络引发全局性信息级联，实现指数传播。</p>
+<p>上面的几个因素我们会在下一篇文章里详细介绍，在这里，我们先来解释其中一个相对陌生的概念——什么是信息级联？</p>
+<p>所谓信息级联，可以理解为，一旦有一点开始，它将会自己延续。也就是说，新成员的加入，很大程度上是和之前的成员一样受到了相同力量的吸引。因此，一个初始震动能够波及很大范围，即使这个震动本身是很微小的。这就像音乐会时，原先是几处零星的听众打着节拍，然后节拍带动他们身边的几个人，接着全场迅速连成了一片，人们打着同一个节拍。</p>
+<p>再比如，公司要组织年会出游，在大家对几个备选去处难以取舍时，A 同事提议去东京，B 同事觉得不错就赞同了 A 的提议。C 同事呢，他早想去东京于是就马上附和。那么，后续的同事会如何选择呢？</p>
+<p>结果是，他们在选择时，与其他选项相比，会倾向于选择前面3位同事的提议即京东。我们可以认为这种行为是一种从众模仿，从他人行为中获取信息来作为自己行动选择的参照，这个过程往往会产生信息级联。</p>
+<p>实际上，我们所看的各种时尚流行、刷屏事件以及某个产品或文章刷爆朋友圈，都是引发全局性的信息级联效应。全局性级联会使得原先不起眼的事情发酵酝酿成一个大事件，或者使原先看起来风平浪静的局面突然风起云涌。</p>
+<p>然而，在现实当中，全局性级联是很少出现的。我们看市场上能够流行一时的 APP、畅销书、社会风潮就知道，它们屈指可数。大部分同类的 APP、图书、思想都在某个角落里默默呆着。</p>
+<p>##小 结</p>
+<p>那么，什么情况下才能发生信息的全局性级联？或者说，在运营中，我们采取哪些行动，可以让我们的产品或内容在朋友圈或者网络上疯传呢？</p>
+<p>这一篇我们主要介绍了我们所处的社会环境、网络特性及其所遵循的规律。下一篇，我们将结合这些规律以及上面提到的信息传播过程，详细介绍什么样的内容更适合传播？什么样的早期接纳者才是好的种子用户？所谓具有一定连通性的网络是什么意思？什么样的网络有利于内容早期的传播和信息级联？</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络科学/" rel="tag"># 网络科学</a>
+          
+            <a href="/tags/运营/" rel="tag"># 运营</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/02/How-to-operate--via-Network-Science-2/" rel="next" title="如何用网络知识做运营(下)">
+                <i class="fa fa-chevron-left"></i> 如何用网络知识做运营(下)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/02/3 -Financial Management02-Three Kinds of wallets /" rel="prev" title="三个钱包理财术">
+                三个钱包理财术 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/我的头像.png"
+               alt="zhailiang" />
+          <p class="site-author-name" itemprop="name">zhailiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Hailiange" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/p/1005052209408084/home?from=page_100505&mod=TAB&is_all=1#place" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/doitdone/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我们都镶嵌在一个巨大而又微小社会网络里"><span class="nav-number">1.</span> <span class="nav-text">我们都镶嵌在一个巨大而又微小社会网络里</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息是如何在网络中流传的？"><span class="nav-number">2.</span> <span class="nav-text">信息是如何在网络中流传的？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhailiang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'Hailiang-1';
+      var disqus_identifier = '2018/12/02/How-to-operate--via-Network-Science-1/';
+
+      var disqus_title = "如何用网络知识做运营(上)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
